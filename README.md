@@ -6,8 +6,10 @@
 - This is the final project from the Fundamentals program provided by Gaza Sky Geeks (GSG). 
 - It aims at developing our web development skills and gaining new skills other than those acquired during the program. 
 ---
+### What is this app?
+- It is a platform for selling and buying products
 
-### What is this app? 
+### User Journey? 
 - This app provides ways for: 
     1. **sellers** to enlist products they want to sell. 
     2. **Customers or buyers** can see the list of products available and choose what to buy. 
