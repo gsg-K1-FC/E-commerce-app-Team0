@@ -1,4 +1,5 @@
-# E-commerce-app-team1
+
+# E-commerce-app-Team0
 
 ### Why we did this? 
 - This app was designed and implemented to make people's lifes easier selling and buying things online. 
