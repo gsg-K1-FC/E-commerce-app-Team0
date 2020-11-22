@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This app is platform where you can sell or buy stuff">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="styles/home.css" type="text/css">
@@ -45,22 +46,22 @@
                 <span>Beauty</span>
             </div>
         </div> 
-        <div class="sort-by">
-            <h2>Sort By</h2>
-            <div>
-                <input type="radio" id="price-up" name="price" checked>
-                <label for="price-up">Price</label>
-                <img src="images/up arrow.png" alt="up arrow"> 
-            </div>
-            <div> 
-                <input type="radio" id="price-down" name="price"> 
-                <label for="price-down">Price</label>
-                <img src="images/down arrow.png" alt="down arrow">
-            </div>
-        </div> 
+
+        <div class="sort-list">
+            <h2>Filter By Price</h2>
+            <label for="menu-sort">Select Price Range</label> 
+            <select name="price" id="menu-sort">
+                <option value="Select Price Range">Select Price Range</option>
+                <option value="All">All</option>
+                <option value="1-100">1-100 $</option>
+                <option value="101-500">101-500 $</option>
+                <option value="501-1000">501-1000 $</option>
+                <option value="1001 and more">1001 $ and more</option>
+            </select>
+        </div>
 
         <div class="cart">
-            <img src="images/Shopping-cart.png" alt="Shopping cart"> 
+            <img src="images/shopping-cart.svg" alt="Shopping cart"> 
             <h3>Cart</h3>
         </div>
     </div> 
@@ -75,7 +76,7 @@
             <h1 class="brand-name"> GITShop</h1>
 
             <div class="cart">
-                <img src="images/Shopping-cart.png" alt="Shopping cart"> 
+                <img src="images/shopping-cart.svg" alt="Shopping cart"> 
                 <h3>Cart</h3>
             </div>
 
@@ -110,13 +111,43 @@
                             <input type="text" value="" placeholder="Search by product name">
                         </div>
                     </form>
-                    <img class="search-icon" src="images/search.svg" alt="Search">  
-                    <img class="sort-icon" title="sort" src="images/sort.svg" alt="Sort">  
+                    <div class="sort-list">
+                        <label for="utility-sort">Select Price Range</label> 
+                        <select name="price" id="utility-sort">
+                            <option value="Select Price Range">Select Price Range</option>
+                            <option value="All">All</option>
+                            <option value="1-100">1-100 $</option>
+                            <option value="101-500">101-500 $</option>
+                            <option value="501-1000">501-1000 $</option>
+                            <option value="1001 and more">1001 $ and more</option>
+                        </select>
+                    </div>
+                    <!-- <img class="sort-icon" title="sort" src="images/sort.svg" alt="Sort">   -->
                 </div>
             </div>
         </section>  
         <!-- Products Section -->
         <section id="products">
+            <div class="search-sort">
+                <form class="search-box">
+                    <div class=search>
+                        <input type="image" src="images/search.svg" alt="search image"> 
+                        <input type="text" value="" placeholder="Search by product name">
+                    </div>
+                </form> 
+
+                <div class="sort-list">
+                    <label for="products-section-sort">Select Price Range</label> 
+                    <select name="price" id="products-section-sort">
+                        <option value="Select Price Range">Select Price Range</option>
+                        <option value="All">All</option>
+                        <option value="1-100">1-100 $</option>
+                        <option value="101-500">101-500 $</option>
+                        <option value="501-1000">501-1000 $</option>
+                        <option value="1001 and more">1001 $ and more</option>
+                    </select>
+                </div>
+            </div>
             <div class="products-grid"> </div>
         </section>
 

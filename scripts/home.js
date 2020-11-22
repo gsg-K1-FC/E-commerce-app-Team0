@@ -75,6 +75,7 @@ const products = [
 
 
 ]; 
+console.log(typeof products[0].id);
 
 
 // Hamburger Menu Animation
@@ -160,7 +161,8 @@ function createProductCard(product){
     const addToCart = document.createElement("div");
     addToCart.classList.add("add-to-cart") 
     const addToCartImage = document.createElement("img");
-    addToCartImage.setAttribute("src","./images/Shopping-cart.png"); 
+    addToCartImage.setAttribute("src","./images/shopping-cart2.svg");
+    addToCartImage.setAttribute("alt","add to cart image"); 
     const addToCartText = document.createElement("span");
     addToCartText.textContent = "Add to cart";   
     addToCart.appendChild(addToCartImage); 
@@ -175,7 +177,7 @@ function createProductCard(product){
 }  
 
 // This function generates random number
-// returns a random number in string format
+// returns a random number
 // uses time object to get unique number to be used 
 // as product id.
 function generateRandomNumber(){
