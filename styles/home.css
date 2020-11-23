@@ -172,6 +172,7 @@ body{
     display: flex;  
     padding: 2rem; 
 
+   
 } 
 
 /* Header Search Bar */
@@ -274,3 +275,4 @@ body{
         display: block;
         cursor: pointer;
     }
+}
