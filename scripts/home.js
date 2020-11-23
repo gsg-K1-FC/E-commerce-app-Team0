@@ -403,7 +403,7 @@ document
       burgerMenu.classList.remove("open");
     }
     menuFilter.selectedIndex = 0;
-  }); 
+  });
 
 // Filter By Price
 // Get handle of the Filter drop downs in both big and medium screens
@@ -475,10 +475,57 @@ function checkInRange(products, range) {
     maxBound = Number.MAX_SAFE_INTEGER;
   }
   return products.filter(
-    product => product.price >= minBound && product.price <= maxBound
+    (product) => product.price >= minBound && product.price <= maxBound
   );
 }
 
+// Search by name
+// Get handle of all search boxes
+// Add event listener to each of them
+const searchBoxes = Array.from(document.querySelectorAll(".search-box"));
+searchBoxes.forEach((searchBox) => {
+  const inputField = searchBox.children[0].children[1];
+
+  searchBox.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (searchResult.length !== 0) {
+      populateProduct(searchResult);
+    } else {
+      document.querySelector("#products .products-grid").textContent =
+        "Sorry, No matchs for the name you typed";
+    }
+    event.target.children[0].children[1].value = "";
+  });
+
+  let searchResult;
+  inputField.addEventListener("keyup", (event) => {
+    // keyCode 13 is the Enter key
+    if (event.keyCode !== 13) {
+      const searchValue = event.target.value;
+      searchResult = searchProductsByName(productsCurrentlyShown, searchValue);
+      if (searchResult.length !== 0) {
+        populateProduct(searchResult);
+      } else {
+        document.querySelector("#products .products-grid").textContent =
+          "Sorry, No matchs for the name you typed";
+      }
+    }
+  });
+});
+
+// This function search an array of products for product name
+// It takes products array as well as name as input
+// and returns an array of products that has the intended name
+
+function searchProductsByName(products, name) {
+  const regExp = new RegExp(name.toLowerCase(), "g");
+  return products.filter((product) => {
+    if (product.name.toLowerCase().match(regExp)) {
+      return true;
+    }
+    return false;
+  });
+}
 
 // This function addes product card to the products grid
 // It takes a products array as argument
