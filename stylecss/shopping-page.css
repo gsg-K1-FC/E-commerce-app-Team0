@@ -21,12 +21,14 @@
 #titles {
 	color: #e94311;
 	font-size: 35px;
+	
 }
 #term {
 	color: #718c95;
 	font-size: 21px;
 	font-weight: bolder;
 }
+
 .container {
 	position: relative;
 }
@@ -66,5 +68,7 @@ p {
     float: left;
     font-style: oblique;
     border-radius: 50%;
+   
+
    
 }
