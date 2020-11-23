@@ -403,7 +403,81 @@ document
       burgerMenu.classList.remove("open");
     }
     menuFilter.selectedIndex = 0;
+  }); 
+
+// Filter By Price
+// Get handle of the Filter drop downs in both big and medium screens
+const sortMenus = Array.from(document.querySelectorAll(".sort-drop-menu"));
+// Add event listener to the filter by price
+// drop down menus in both big and medium screens
+sortMenus.forEach((sortMenu) => {
+  sortMenu.addEventListener("change", (event) => {
+    const target = event.target;
+    const priceRange = target.options[target.selectedIndex].label;
+    if (priceRange === "Select Price Range") {
+      populateProduct(productsCurrentlyShown);
+    } else {
+      filterProducts(priceRange);
+    }
   });
+});
+
+// Get handle of filter by price menu in small screens (menu content)
+// Add event listener to it (change)
+const menuFilter = document.querySelector("#menu-sort");
+menuFilter.addEventListener("change", (event) => {
+  const target = event.target;
+  const priceRange = target.options[target.selectedIndex].label;
+  if (priceRange === "Select Price Range") {
+    populateProduct(productsCurrentlyShown);
+  } else {
+    filterProducts(priceRange);
+  }
+  menuContent.classList.remove("show");
+  burgerMenu.classList.remove("open");
+});
+
+// This function filter products array according to
+// range paramenter
+// returns filtered array.
+function filterProducts(range) {
+  if (range === "All") {
+    const tempProductArray = [...productsCurrentlyShown];
+    sortProductsDesc(tempProductArray);
+    populateProduct(tempProductArray);
+  } else {
+    const productsInRange = checkInRange(productsCurrentlyShown, range);
+    if (productsInRange.length !== 0) {
+      populateProduct(productsInRange);
+    } else {
+      document.querySelector("#products .products-grid").textContent =
+        "Sorry, No matchs for the price range selected";
+    }
+  }
+}
+
+// This function sort products array in descending order on price
+// It takes an array of products and sorts it in place
+function sortProductsDesc(products) {
+  products.sort((a, b) => (a.price > b.price ? -1 : a.price < b.price ? 1 : 0));
+}
+
+// This function checks if a number(price) in a price range
+// It takes the products array and the range as input
+// It returns an array of products which match the criteria
+function checkInRange(products, range) {
+  let minBound, maxBound;
+  if (range.indexOf("-") !== -1) {
+    minBound = +range.slice(0, range.indexOf("-"));
+    maxBound = +range.slice(range.indexOf("-") + 1, range.indexOf(" "));
+  } else {
+    minBound = +range.slice(0, 5);
+    maxBound = Number.MAX_SAFE_INTEGER;
+  }
+  return products.filter(
+    product => product.price >= minBound && product.price <= maxBound
+  );
+}
 
 
 // This function addes product card to the products grid
