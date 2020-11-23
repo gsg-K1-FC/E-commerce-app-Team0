@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 html{
-    font-size: 12px; 
+    font-size: 12px;
 }
 body{
     font-family: 'Raleway', sans-serif;
-} 
+}  
 
 /* Header Section */ 
 #header{
@@ -97,7 +97,8 @@ body{
     left: -50rem;
     width: 25rem; 
     height: 80%; 
-    background-color: #e0d9d9;
+    background-color: rgba(150,150,150,0.2);
+    backdrop-filter: blur(20px);
     font-size: 1.5rem;
     overflow-y: scroll; 
     box-shadow: 3px 2px 5px rgba(150, 150, 255,0.5);
@@ -210,8 +211,11 @@ body{
     border-radius: 2.5rem; 
     border: 2px solid #df4d10f2;
     outline: none;
-} 
+}
 
+.util-box-products{
+    background-color: #E2DBBF;
+}
 /* Utilities Box Section */
 #utilities-box{
     background-color: #94CDBD;
@@ -249,9 +253,9 @@ body{
 
 #utility-sort,#menu-sort,#products-section-sort{
     font-size: clamp(12px,1.1vw,25px); 
-    padding: 0.5rem; 
+    padding: 0.6rem;
     border: 2px solid #df4d10f2;
-    border-radius: 1rem 0.1rem;  
+    border-radius: 1.5rem;  
     outline: none; 
     margin-left: 1rem; 
     cursor: pointer;
@@ -266,6 +270,7 @@ body{
 
 
 /* Products Section */ 
+
 #products{
     background-color: #E2DBBF;
 } 
@@ -310,7 +315,8 @@ body{
 } 
 
 .add-to-cart{
-    background-color: #df4d10f2;
+    /* background-color: #df4d10f2; */
+    background-color: #718c95;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
@@ -361,8 +367,8 @@ body{
     }
     100%{
         opacity: 1;
-        top: 7.8rem;
-        left: 0;
+        top: 6rem;
+        left: -1rem;
     }
 
 } 
@@ -370,12 +376,12 @@ body{
 @keyframes crawlOut{
     0%{
         opacity: 1; 
-        top: 7.8rem; 
+        top: 6rem; 
         left: 5rem;
     }
     100%{
         opacity: 0; 
-        top: 7.8rem; 
+        top: 6rem; 
         left: -50rem;
     }
 }
@@ -384,21 +390,21 @@ body{
 /* Media Queries */
 @media (max-width:1000px){
     .util-box-products{ 
-        display: flex;
-    } 
+        display: flex; 
+    }
     #utilities-box{
         width: 7%;
     } 
     .utilities-box__content{
-        width: 7%; 
+        width: 100%; 
         height: 100%;
         flex-direction: column;
     } 
     .utilities-box__content .categories{
         flex-direction: column;
         width: 100%; 
-        align-items: center;
-        height: 20%; 
+        align-items: center; 
+        height: 50vh;
         justify-content: space-evenly;
     } 
     .utilities-box__content .search-sort{
@@ -433,7 +439,7 @@ body{
     /* Header Section */
     #header{
         min-width: 25rem;
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
     .hamburger-menu{
         display: flex;
@@ -455,6 +461,9 @@ body{
     }   
 
     /* Homepage Content Section */
+    .util-box-products{ 
+        display: block; 
+    }
     #products{
         min-width: 25rem;
     }
