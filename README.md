@@ -9,6 +9,16 @@
 ### What is this app?
 - It is a platform for selling and buying products
 ---
+### How to install/run this app locally?
+- You can get the source code of this app using one of the following two methods: 
+
+    1. Download it as zip file by clicking the button that says (code) up this page then choose (download ZIP).
+   
+    2. Clone the repository using CLR (Command Line Interface) of your choice as follows: 
+        - Navigate to the location where you want the app files to be using CLR. 
+        - Copy ` git clone https://github.com/gsg-K1-FC/E-commerce-app-Team0.git ` and past it into the CLR then hit Enter
+- You can then use any text editor of your choice to view the code. [VScode](https://code.visualstudio.com) or [Atom](https://atom.io) are recommended though. 
+---
 ### User Story 
 - In this website there are two types of users: **Seller** & **Customer/Buyer**
 
