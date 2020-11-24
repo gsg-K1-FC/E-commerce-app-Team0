@@ -18,12 +18,12 @@
 	height: 900px;
 	opacity: 40%;
 }
-#titles {
+.titles {
 	color: #e94311;
 	font-size: 35px;
 	
 }
-#term {
+.term {
 	color: #718c95;
 	font-size: 21px;
 	font-weight: bolder;
@@ -55,7 +55,7 @@ p {
 	padding-bottom: 38px;
 	padding-top: 7px;
 	color: #676c6d;
-	
+	margin-left:12px;
 }
 #button {
 	background-color: #f46b42;
@@ -67,7 +67,7 @@ p {
 	height: 40px;
     float: left;
     font-style: oblique;
-    border-radius: 50%;
+    border-radius: 20PX;
    
 
    
