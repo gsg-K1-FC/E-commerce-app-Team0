@@ -16,7 +16,7 @@
 .shop-img {
 	width: 100%;
 	height: 900px;
-	opacity: 40%;
+	opacity: 55%;
 	text-align: center;
 }
 .titles {
@@ -31,12 +31,13 @@
 
 .container {
 	position: relative;
+		
 }
-#customer {
+.customer {
 	width: 300px;
 	height: 200px;
-	margin-top: 150px;
-	margin-left: 120px;
+	margin-top: 120px;
+	margin-left: 190px;
 	background-color: #c9fdef;
 	border-radius: 14px;
 	justify-content: space-around;
@@ -44,7 +45,10 @@
 	display: flex;
 	float: left;
 }
-
+.customer-button{
+	color: #e2dbbf;
+	text-decoration: none;
+}
 h1 {
 	text-align: center;
 	color: #e94311;
@@ -70,21 +74,27 @@ p {
 	font-style: oblique;
 	border-radius: 20PX;
 }
-@media screen and (max-width: 414px) {
-	#customer {
-		width: 90%;
-		height: 100%;
+@media screen and (max-width: 375px) {
+	.customer {
+    	height: auto;
 		align-items: center;
 		margin-top: 10%;
 		display: block;
+		width: clamp(70vw,80vw,90vw);
 	}
 	.titles {
 		width: 100%;
-		margin-left: 20%;
+		margin-left: 30%;
+		width: clamp(70vw,80vw,90vw);
+        display: block;
+
 	}
 	.term {
-		display: inline-block;
-		width: 100%;
-		padding-left: 20%;	
+		display: block;
+		margin-left: 30%;	
+		font-size: clamp(10px,5vw,60px);
+		color: rgb(56, 50, 50);	
 	}
+	
+	
 }
