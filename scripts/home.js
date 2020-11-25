@@ -167,7 +167,6 @@ function createProductCard(product){
     addToCartText.textContent = "Add to cart";   
     addToCart.appendChild(addToCartImage); 
     addToCart.appendChild(addToCartText); 
-    
     card.appendChild(namePrice); 
     card.appendChild(image); 
     card.appendChild(addToCart);
