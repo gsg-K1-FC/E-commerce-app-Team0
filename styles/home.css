@@ -206,9 +206,14 @@ body{
     font-size: 2rem;  
     display: flex;  
     padding: 2rem; 
+<<<<<<< HEAD
+
+   
+=======
 } 
 .menu-content .cart img{
     align-self: center;
+>>>>>>> main
 } 
 
 /* Search Box */ 
@@ -506,6 +511,9 @@ body{
         min-width: 25rem;
         top:5.5rem;
     }
+<<<<<<< HEAD
+}
+=======
     #products .search-sort{
         display:none; 
     }  
@@ -526,3 +534,4 @@ body{
     }
 
 }
+>>>>>>> main
