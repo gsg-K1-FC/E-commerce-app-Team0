@@ -28,8 +28,7 @@ addProduct.addEventListener("submit",function(event){
             
             sellerProducts.push(newProduct);
             localStorage.setItem("sellerProducts",JSON.stringify(sellerProducts));
-            
-         
+            window.open ("./seller.html")        
           
    }
 })
