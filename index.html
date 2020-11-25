@@ -3,160 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This app is platform where you can sell or buy stuff">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="styles/home.css" type="text/css">
-    <title>GITShop</title>
+    <title>GitShop</title>
+    <link rel="stylesheet" href="./styles/shopping-page.css">
 </head>
-<body> 
-    <!-- Menu for small devices --> 
-    <div class="menu-content">
-        <div class="user-type">
-            <div class="buyer">
-                <input type="radio" id="buyer" name="user" checked>
-                <label for="buyer">Buyer</label> 
-            </div>
-            <div class="seller"> 
-                <input type="radio" id="seller" name="user"> 
-                <label for="seller">Seller</label>
-            </div>
-        </div> 
-        <div class="categories"> 
-            <h2>Categories</h2>
-            <div id="technology" class="technology">
-                <img src="images/Technology.svg" alt="Technology">
-                <span>Technology</span>
-            </div>
-            <div id="fashion" class="fashion">
-                <img src="images/fashion.svg" alt="Fashion">
-                <span>Fashion</span>
-            </div>
-            <div id="fitness" class="fitness">
-                <img src="images/Fitness.svg" alt="Fitness">
-                <span>Fitness</span>
-            </div>
-            <div id="cars" class="cars">
-                <img src="images/car.svg" alt="Cars">
-                <span>Cars</span>
-            </div>
-            <div id="beauty" class="beauty">
-                <img src="images/Beauty.svg" alt="Beauty">
-                <span>Beauty</span>
-            </div>
-        </div> 
-
-        <div class="sort-list">
-            <h2>Filter By Price</h2>
-            <label for="menu-sort">Select Price Range</label> 
-            <select name="price" id="menu-sort">
-                <option value="Select Price Range">Select Price Range</option>
-                <option value="All">All</option>
-                <option value="1-100">1-100 $</option>
-                <option value="101-500">101-500 $</option>
-                <option value="501-1000">501-1000 $</option>
-                <option value="1001 and more">1001 $ and more</option>
-            </select>
-        </div>
-
-        <div class="cart">
-            <div class="badge">
-                <span>1</span>
-                <img src="images/shopping-cart.svg" alt="Shopping cart"> 
-            </div>
-            <h3>Cart</h3> 
-        </div>
-    </div> 
-
-    <!-- Header Section -->
-    <header id="header">
-        <div class="header-content">
-            <div class="hamburger-menu">
-                <div class="hamburger-menu__lines"></div>
-            </div>
-
-            <h1 class="brand-name"> GITShop</h1>
-
-            <div class="cart">
-                <div class="badge">
-                    <span>1</span>
-                    <img src="images/shopping-cart.svg" alt="Shopping cart"> 
-                </div>
-                <h3>Cart</h3> 
-            </div>
-
-            <div class="search-icon">
-                <img src="images/search.svg" alt="search icon">
-            </div>
-        </div> 
-        <form class="search-box hide-search-box">
-            <div class=search>
-                <input type="image" id="submit-image" src="images/search.svg" alt="search image"> 
-                <input type="text" id="input-field" value="" placeholder="Search by product name">
-            </div>
-        </form> 
-    </header> 
+<body>
+   
+    <section class="page-container">
+    <img class="shop-img" src="./images/shopping-bags.jpg" alt="shopping |E-Commerce">
+    <div class="content">
+        
+        <span class = "titles">Our Vision <br> </span> <br />
+        <span  class ="term">" To build a place where people can come to find and discover anything <br>they  might want to buy online." <br></span> <br />
+   
+        <span class = "titles" >Our Mission <br> </span> <br />
+        <span  class="term" > "Our mission is to continually raise the bar of the customer<br> experience by using the internet and technology to help <br>consumers find, discover and buy anything, and empower<br> businesses and content creators to maximise their success."</span
+        >
+       <section class="container">
+      <div class="customer">
+          
+            <h1> About Seller  </h1>
+            <p> GitShop believes in the importance of the customer, so we are keen to employ the best provide quality with the highest standards, and we always think deeper to serve our customers</p>
+             <button id="button">Upload Your New products</button>
+          </div>
+         <div class= "customer">
+                <h1> About customer</h1>
+                <p>GitShop welcomes customers of all ages and all nationalities, as it is the first place for all products that you want in your Career or your home. </p>
+                 <button id="button">
+                     <a  class= "customer-button"href="home.html">Let's Buy Nice Products</a>
+                 </button>
+              </div> 
+            </section>
+                  </div>
     
-    <!-- Homepage Content Section --> 
-    <div class="util-box-products">
-        <!-- Utilities Box Section -->
-        <section id="utilities-box">
-            <div class="utilities-box__content">
-                <div class="categories">
-                    <img title="Technology" src="images/Technology.svg" alt="Technology">
-                    <img title="Fashion" src="images/fashion.svg" alt="fashion">
-                    <img title="Fitness" src="images/Fitness.svg" alt="fitness">
-                    <img title="Cars" src="images/car.svg" alt="car">
-                    <img title="Beauty" src="images/Beauty.svg" alt="Beauty">
-                </div> 
-                <div class="search-sort">
-                    <form class="search-box">
-                        <div class=search>
-                            <input type="image" src="images/search.svg" alt="search image"> 
-                            <input type="text" value="" placeholder="Search by product name">
-                        </div>
-                    </form>
-                    <div class="sort-list">
-                        <label for="utility-sort">Select Price Range</label> 
-                        <select class="sort-drop-menu" name="price" id="utility-sort">
-                            <option value="Select Price Range">Select Price Range</option>
-                            <option value="All">All</option>
-                            <option value="1-100">1-100 $</option>
-                            <option value="101-500">101-500 $</option>
-                            <option value="501-1000">501-1000 $</option>
-                            <option value="1001 and more">1001 $ and more</option>
-                        </select>
-                    </div>
-                </div>
-            </div> 
-        </section>  
-        <!-- Products Section -->
-        <section id="products">
-            <div class="search-sort">
-                <form class="search-box">
-                    <div class=search>
-                        <input type="image" src="images/search.svg" alt="search image"> 
-                        <input type="text" value="" placeholder="Search by product name">
-                    </div>
-                </form> 
-
-                <div class="sort-list">
-                    <label for="products-section-sort">Select Price Range</label> 
-                    <select class="sort-drop-menu" name="price" id="products-section-sort">
-                        <option value="Select Price Range">Select Price Range</option>
-                        <option value="All">All</option>
-                        <option value="1-100">1-100 $</option>
-                        <option value="101-500">101-500 $</option>
-                        <option value="501-1000">501-1000 $</option>
-                        <option value="1001 and more">1001 $ and more</option>
-                    </select>
-                </div>
-            </div>
-            <div class="products-grid"></div>
-        </section>
-
-    </div>
-    
-    <script src="scripts/home.js" type="text/javascript"></script>
+               
+</section>
 </body>
+
 </html>
