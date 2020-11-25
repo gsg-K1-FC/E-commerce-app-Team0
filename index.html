@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This app is platform where you can sell or buy stuff">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="styles/home.css" type="text/css">
@@ -25,23 +24,23 @@
         </div> 
         <div class="categories"> 
             <h2>Categories</h2>
-            <div class="technology">
+            <div id="technology" class="technology">
                 <img src="images/Technology.svg" alt="Technology">
                 <span>Technology</span>
             </div>
-            <div class="fashion">
+            <div id="fashion" class="fashion">
                 <img src="images/fashion.svg" alt="Fashion">
                 <span>Fashion</span>
             </div>
-            <div class="fitness">
+            <div id="fitness" class="fitness">
                 <img src="images/Fitness.svg" alt="Fitness">
                 <span>Fitness</span>
             </div>
-            <div class="cars">
+            <div id="cars" class="cars">
                 <img src="images/car.svg" alt="Cars">
                 <span>Cars</span>
             </div>
-            <div class="beauty">
+            <div id="beauty" class="beauty">
                 <img src="images/Beauty.svg" alt="Beauty">
                 <span>Beauty</span>
             </div>
@@ -61,8 +60,11 @@
         </div>
 
         <div class="cart">
-            <img src="images/shopping-cart.svg" alt="Shopping cart"> 
-            <h3>Cart</h3>
+            <div class="badge">
+                <span>1</span>
+                <img src="images/shopping-cart.svg" alt="Shopping cart"> 
+            </div>
+            <h3>Cart</h3> 
         </div>
     </div> 
 
@@ -76,8 +78,11 @@
             <h1 class="brand-name"> GITShop</h1>
 
             <div class="cart">
-                <img src="images/shopping-cart.svg" alt="Shopping cart"> 
-                <h3>Cart</h3>
+                <div class="badge">
+                    <span>1</span>
+                    <img src="images/shopping-cart.svg" alt="Shopping cart"> 
+                </div>
+                <h3>Cart</h3> 
             </div>
 
             <div class="search-icon">
@@ -95,7 +100,7 @@
     <!-- Homepage Content Section --> 
     <div class="util-box-products">
         <!-- Utilities Box Section -->
-        <section id="utilities-box"> 
+        <section id="utilities-box">
             <div class="utilities-box__content">
                 <div class="categories">
                     <img title="Technology" src="images/Technology.svg" alt="Technology">
@@ -113,7 +118,7 @@
                     </form>
                     <div class="sort-list">
                         <label for="utility-sort">Select Price Range</label> 
-                        <select name="price" id="utility-sort">
+                        <select class="sort-drop-menu" name="price" id="utility-sort">
                             <option value="Select Price Range">Select Price Range</option>
                             <option value="All">All</option>
                             <option value="1-100">1-100 $</option>
@@ -122,9 +127,8 @@
                             <option value="1001 and more">1001 $ and more</option>
                         </select>
                     </div>
-                    <!-- <img class="sort-icon" title="sort" src="images/sort.svg" alt="Sort">   -->
                 </div>
-            </div>
+            </div> 
         </section>  
         <!-- Products Section -->
         <section id="products">
@@ -138,7 +142,7 @@
 
                 <div class="sort-list">
                     <label for="products-section-sort">Select Price Range</label> 
-                    <select name="price" id="products-section-sort">
+                    <select class="sort-drop-menu" name="price" id="products-section-sort">
                         <option value="Select Price Range">Select Price Range</option>
                         <option value="All">All</option>
                         <option value="1-100">1-100 $</option>
@@ -148,15 +152,11 @@
                     </select>
                 </div>
             </div>
-            <div class="products-grid"> </div>
+            <div class="products-grid"></div>
         </section>
 
     </div>
     
-
-
-
-
     <script src="scripts/home.js" type="text/javascript"></script>
 </body>
 </html>

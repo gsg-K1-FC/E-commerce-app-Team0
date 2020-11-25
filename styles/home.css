@@ -4,14 +4,17 @@
     box-sizing: border-box;
 }
 html{
-    font-size: 12px; 
+    font-size: 12px;
 }
 body{
     font-family: 'Raleway', sans-serif;
-} 
+}  
 
 /* Header Section */ 
 #header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     background-color: #718c95;
     padding: 0.5rem 0;
 }
@@ -33,7 +36,26 @@ body{
 .cart{
     display: flex;
     cursor: pointer;
-}  
+}
+.cart .badge{
+    position: relative;
+} 
+.cart .badge span{
+    font-family: monospace;
+    position: absolute;
+    left: 0.5rem;
+    top: -0.5rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243,94,8,0.9);
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #dfdfdf;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    
+}
 .cart h3{
     align-self: center;
 }
@@ -97,7 +119,8 @@ body{
     left: -50rem;
     width: 25rem; 
     height: 80%; 
-    background-color: #e0d9d9;
+    background-color: rgba(150,150,150,0.2);
+    backdrop-filter: blur(20px);
     font-size: 1.5rem;
     overflow-y: scroll; 
     box-shadow: 3px 2px 5px rgba(150, 150, 255,0.5);
@@ -210,10 +233,17 @@ body{
     border-radius: 2.5rem; 
     border: 2px solid #df4d10f2;
     outline: none;
-} 
+}
 
+.util-box-products{
+    background-color: #E2DBBF;
+}
 /* Utilities Box Section */
 #utilities-box{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 4.8rem;
     background-color: #94CDBD;
 }  
 
@@ -249,9 +279,9 @@ body{
 
 #utility-sort,#menu-sort,#products-section-sort{
     font-size: clamp(12px,1.1vw,25px); 
-    padding: 0.5rem; 
+    padding: 0.6rem;
     border: 2px solid #df4d10f2;
-    border-radius: 1rem 0.1rem;  
+    border-radius: 1.5rem;  
     outline: none; 
     margin-left: 1rem; 
     cursor: pointer;
@@ -267,7 +297,9 @@ body{
 
 /* Products Section */ 
 #products{
-    background-color: #E2DBBF;
+    position: relative;
+    top: 8.9rem;
+    background-color: #f7f7f7f2;
 } 
 #products .search-sort{
     display:none;
@@ -290,10 +322,12 @@ body{
     color: #627a82;
     height: 38rem;
     border-radius: 0.5rem; 
-    box-shadow: 4px 4px 10px rgba(100,100,100,0.5); 
+    box-shadow: 4px 4px 10px rgba(100,100,100,0.5);
+    transition: transform 0.5s; 
 }  
 .card:hover{
     transform: scale(1.05);
+    transition: 0.5s;
 }
 .card img:nth-child(2){
     margin: 0 auto;
@@ -302,7 +336,7 @@ body{
     height: 25rem;
 } 
 .name-price{
-    font-size: clamp(10px,2vw,25px);
+    font-size: clamp(10px,1.5vw,25px);
     font-weight: 900;
     display: flex; 
     justify-content: space-between;
@@ -310,8 +344,9 @@ body{
 } 
 
 .add-to-cart{
-    background-color: #df4d10f2;
-    border-radius: 1rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    border: 3px solid #df4d10f2;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -323,10 +358,12 @@ body{
     width: 90%; 
     cursor: pointer;
     color: #2a1515;
+    transition: transform 0.5s;
 }  
 .add-to-cart:hover{
     box-shadow: 5px 5px 15px rgba(150,150,150,0.5); 
     transform: scale(1.1);
+    transition: 0.5s;
 }
 .add-to-cart img{
     width: 2.2rem; 
@@ -361,8 +398,8 @@ body{
     }
     100%{
         opacity: 1;
-        top: 7.8rem;
-        left: 0;
+        top: 6rem;
+        left: -1rem;
     }
 
 } 
@@ -370,12 +407,12 @@ body{
 @keyframes crawlOut{
     0%{
         opacity: 1; 
-        top: 7.8rem; 
+        top: 6rem; 
         left: 5rem;
     }
     100%{
         opacity: 0; 
-        top: 7.8rem; 
+        top: 6rem; 
         left: -50rem;
     }
 }
@@ -385,20 +422,24 @@ body{
 @media (max-width:1000px){
     .util-box-products{ 
         display: flex;
-    } 
+        position: relative;
+    }
     #utilities-box{
+        position: fixed;
+        left: 0;
         width: 7%;
+        height: 100%;
     } 
     .utilities-box__content{
-        width: 7%; 
+        width: 100%; 
         height: 100%;
         flex-direction: column;
     } 
     .utilities-box__content .categories{
         flex-direction: column;
         width: 100%; 
-        align-items: center;
-        height: 20%; 
+        align-items: center; 
+        height: 50vh;
         justify-content: space-evenly;
     } 
     .utilities-box__content .search-sort{
@@ -407,6 +448,9 @@ body{
     
     #products{
         width: 93%;
+        position: absolute; 
+        right: 0; 
+        top:0;
     }
     #products .search-sort{
         display:flex; 
@@ -433,7 +477,7 @@ body{
     /* Header Section */
     #header{
         min-width: 25rem;
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
     .hamburger-menu{
         display: flex;
@@ -455,8 +499,12 @@ body{
     }   
 
     /* Homepage Content Section */
+    .util-box-products{ 
+        display: block; 
+    }
     #products{
         min-width: 25rem;
+        top:5.5rem;
     }
     #products .search-sort{
         display:none; 
