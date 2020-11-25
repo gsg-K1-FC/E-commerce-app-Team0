@@ -1,6 +1,6 @@
 
 
-
+let sec=document.getElementsByClassName("section-1");
 var tab_pro= document.getElementsByClassName("tab-pro");
       tab_pro[0].setAttribute('style','visibility:visible');
      console.log(tab_pro[0]);
@@ -261,6 +261,10 @@ list_pro.addEventListener('click',function(){
      list_pro[0].setAttribute('style','visibility:visible;');
      const card = document.createElement("div");
      card.classList.add("card");
+     let p = document.getElementById('price');
+     let p1 = document.getElementById('price2');
+     p.textContent=0;
+     p1.textContent=0;
      if(cartProducts.length !=0)
      {     console.log("hello");
            for( let i =0 ; i < cartProducts.length;i++)
@@ -296,8 +300,8 @@ list_pro.addEventListener('click',function(){
                   
                   qty.setAttribute('style','width:50px;')
                   delete_1.className="far fa-times-circle";
-                  let p = document.getElementById('price');
-                  let p1 = document.getElementById('price2');
+                  
+                  
                   qty.addEventListener('input',function(evt){
                   
                                
@@ -347,8 +351,8 @@ list_pro.addEventListener('click',function(){
                   
 
                   card.appendChild(totalPrice);
-
-
+                  
+                  sec[0].insertBefore(list_pro[0], sec[0].childNodes[5]);
                   
                   list_pro[0].appendChild(card);
                   let pre=parseInt(p.textContent);
