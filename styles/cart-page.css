@@ -120,7 +120,9 @@ th
 }
 .span-sh
 {
-    font-size: 1rem;}
+    font-size: 18px;
+    opacity: 0.7;
+     }
 .grid-pro
 {
     visibility: hidden;
@@ -235,7 +237,23 @@ th
 }
 @media (max-width:1000px)
 {
-    
+    .span-sh
+{
+    font-size: 25px;
+}
+.show-product
+   {
+       display: flex;
+       flex-direction:column;
+   }
+   .sub-total
+{
+    font-size: 24px;
+}
+.sum-pro
+{
+    width: 70%;
+}
 }
 @media (max-width:550px)
 {
