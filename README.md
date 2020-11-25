@@ -65,3 +65,6 @@
 
 ### Design Link: 
 &nbsp;&nbsp;&nbsp;&nbsp;[Website Designs](https://www.figma.com/file/je9Hg76PD8ZVcQOuxNrVfX/team1?node-id=0%3A1)
+
+### Github Pages Link: 
+&nbsp;&nbsp;&nbsp;&nbsp;[GITShop](https://gsg-k1-fc.github.io/E-commerce-app-Team0/)
