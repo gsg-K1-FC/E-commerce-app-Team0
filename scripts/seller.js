@@ -79,7 +79,7 @@ function createSellerProductCard(sellerProducts) {
   namePrice.appendChild(price);
 
   const image = document.createElement("img");
-  image.setAttribute("src", sellerProducts.imageURL);
+  image.setAttribute("src", sellerProducts.imageUrl);
   image.setAttribute("alt", "product image");
 
   const deleteEdit = document.createElement("div"); 
