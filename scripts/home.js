@@ -332,7 +332,7 @@ let productsCurrentlyShown = products;
 document.querySelector(".brand-name").addEventListener("click", () => {
   location.reload();
 });
-
+console.log(cartProducts);
 // Hamburger Menu Animation
 
 const burgerMenu = document.querySelector(".hamburger-menu");
