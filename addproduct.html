@@ -18,27 +18,26 @@
     <div class="contanier">
 
         <!-- section form  -->
-        <section class="section-form">
-         <form class="form-product"> 
+         <form class="form-product" id="add-product"  > 
                  
              <div class=" images-product-default">
                  <img src="images/avatar.png" class="img-product">
-                 <input class="file-product" type="file">
+                 <input name="images" class="file-product" type="text" placeholder="Enter image address" >
              </div>
             
              <div class="input-product">
                  
-                 <input type="text" class="Data-input" placeholder="Product Name">
+                 <input type="text" name="product-name" class="Data-input" placeholder="Product Name" required>
                  
-                 <input type="text" class="Data-input" placeholder="Enter of Price">
+                 <input type="text" name="product-price" class="Data-input" placeholder="Enter of Price" required>
                 
-          
-            <div class="product-discription">
-                 <textarea class="discription-form" placeholder="Discription"></textarea>
-            </div></br>
+           
+            
+                 <textarea name="description" class="discription-form" cols="30" rows="10"  placeholder="Discription" required></textarea>
+        
                 <div class="selection-categories">
-              <select >
-                 
+                    <select name="categories" id="categories">
+                 <option value="Select Category">Select Category</option>
                   <option>Technology</option>
                   <option>Fashion</option>
                   <option>Fitness</option>
@@ -47,13 +46,14 @@
               </select>
             </div>
             <div class="btn-product">
-                <button class="btn">add Product</button>
-                <button class="btn">cancel</button>
+                <button class="btn" type="submit" value="add">add Product</button>
+                <button class="btn" value="cansel">cansel</button>
             </div>
         </div>
+        
             </form>
-        </section>
+           
         </div>
-     
+        <script src="scripts/addproduct.js" type="text/javascript"></script>
 </body>
 </html>

@@ -17,6 +17,7 @@ body{
      margin: 0 auto;
      margin-top: 30px;
      margin-bottom: 30px;
+     background-color:#f6f6f6;
     
  }
 .section-form{
@@ -79,13 +80,14 @@ body{
     
   
 }
-select{
+#categories{
     width: 200px;
     height: 40px;
     margin-bottom: 20px;
     border: none;
     border-bottom: 1px solid #ccc;
     background-color: #f6f6f6;
+    font-size: 17px;
 }
 
 .btn{
@@ -99,6 +101,11 @@ select{
     text-transform: uppercase;
     margin-bottom: 20px;
 }
+.file-product{
+    width:100%;
+    height: 50px;
+}
 
-
- 
+ .images-product-default{
+     width: 30%;
+ }
