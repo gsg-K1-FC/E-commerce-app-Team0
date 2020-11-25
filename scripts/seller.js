@@ -1,7 +1,5 @@
 
 let productContainer=document.getElementById("productContainer")
-
-
    sellerProducts.forEach(function (product ){
  let card=document.createElement("div")
  card.classList.add("card")
