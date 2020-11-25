@@ -97,8 +97,10 @@ var tab_pro= document.getElementsByClassName("tab-pro");
             let pre=parseInt(p.textContent);
             p.textContent= pre+ parseInt(total.textContent)+'$';
             p1.textContent=p.textContent;
+       // sec[0].insertBefore(tab_pro[0], sec[0].childNodes[5]);
 
       }}
+      sec[0].insertBefore(tab_pro[0], sec[0].childNodes[5]);
 
             
 
@@ -231,7 +233,7 @@ list_pro.addEventListener('click',function(){
             tr_tab.appendChild(del);
             tr_tab.setAttribute('style','margin-top:30px;text-align:center;')
             tab_pro[0].appendChild(tr_tab);
-            
+            sec[0].insertBefore(tab_pro[0], sec[0].childNodes[5]);
             let pre=parseInt(p.textContent);
             p.textContent= pre+ parseInt(total.textContent)+'$';
             p1.textContent=p.textContent;
