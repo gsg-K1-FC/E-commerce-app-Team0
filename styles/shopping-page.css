@@ -1,16 +1,17 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 .page-container {
-	position: relative;
+	position: relative; 
 }
 
 .content {
 	position: absolute;
 	top: 10%;
-	margin-left: 35%;
+	left: 50%;
 	transform: translate(-50%);
 }
 .shop-img {
@@ -74,8 +75,12 @@ p {
 	float: left;
 	font-style: oblique;
 	border-radius: 20PX;
-}
+} 
+
 @media screen and (max-width: 375px) {
+	.content{
+		width: 30%;
+	}
 	.customer {
     	height: auto;
 		align-items: center;
@@ -84,7 +89,6 @@ p {
 		
 	}
 	.titles {
-		
 		margin-left: 30%;
 		display: block;
           padding-left:90px;

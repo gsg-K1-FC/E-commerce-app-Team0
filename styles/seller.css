@@ -32,6 +32,15 @@ body{
 }
 #header .brand-name{
     cursor: pointer;
+} 
+#header a img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+} 
+.header__cart-plus{
+    display: flex;
 }
 .cart{
     display: flex;
@@ -343,23 +352,30 @@ body{
     padding: 1rem;
 } 
 
-.add-to-cart{
+.delete-edit{
     background-color: #fff;
-    border-radius: 2rem;
-    border: 3px solid #df4d10f2;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 auto;
     margin-top: 1rem; 
     padding: 0.5rem 0;
-    font-size: clamp(16px,1.5vw,30px);
-    font-weight: 600;
-    text-transform: uppercase;
     width: 90%; 
-    cursor: pointer;
-    color: #2a1515;
+}
+.delete-edit__button{
+    width: 40%;
+    border-radius: 2rem;
+    border: 3px solid #df4d10f2;
     transition: transform 0.5s;
+    font-weight: 600; 
+    font-size: clamp(16px,1.5vw,30px);
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+} 
+.delete-edit__button:hover{
+    transform: scale(1.2);
 }  
+
 .add-to-cart:hover{
     box-shadow: 5px 5px 15px rgba(150,150,150,0.5); 
     transform: scale(1.1);
