@@ -215,6 +215,7 @@ body{
 .search-box{
     display: flex;
     justify-content: center;
+   
 } 
 .search-box .search{
     position: relative;
@@ -342,6 +343,21 @@ body{
     justify-content: space-between;
     padding: 1rem;
 } 
+.backto{
+    width: 190px;
+    height: 50px;
+    margin-right:77%;
+    margin-top: 85%;
+    border: 3px solid #df4d10f2;
+    border-radius: 15px;
+    position: fixed;
+    
+}
+.backlink{
+text-decoration: none;
+color: black;
+font-weight: 800;
+}
 
 .add-to-cart{
     background-color: #fff;
@@ -416,7 +432,6 @@ body{
         left: -50rem;
     }
 }
-
 
 /* Media Queries */
 @media (max-width:1000px){
