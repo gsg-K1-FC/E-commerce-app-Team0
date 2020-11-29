@@ -255,6 +255,10 @@ body{
     justify-content: space-between;
     padding: 0.3rem 0;
 }
+.gitshopedit{
+    text-decoration: none;
+    color: black;
+}
 
 .utilities-box__content .categories{
     display: flex;
