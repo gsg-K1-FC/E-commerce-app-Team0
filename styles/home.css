@@ -442,22 +442,23 @@ body{
         height: 50vh;
         justify-content: space-evenly;
     } 
-    .utilities-box__content .search-sort{
-        display: none;
+    #products .search-sort{
+        position: sticky; 
+        top: 5.5rem; 
+        z-index: 1; 
+        backdrop-filter: blur(2px); 
+
+        display:flex; 
+        justify-content: center;
+        align-items: center; 
     } 
     
     #products{
         width: 93%;
         position: absolute; 
         right: 0; 
-        top:0;
+        top:4.8rem;
     }
-    #products .search-sort{
-        display:flex; 
-        justify-content: center;
-        align-items: center; 
-        margin-top:1rem; 
-    } 
     .products-grid{
         width: 100%;
     } 
