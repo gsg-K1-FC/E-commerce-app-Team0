@@ -438,13 +438,14 @@ body{
       justify-content: space-between;
       justify-items:end;
       z-index: 1; 
-      padding-top:100px; 
-      left: 35%;
-      top: 18%;
-      width: 600px; 
-      height: 600px; 
-      overflow: auto; 
+      padding-top:50px; 
+      left: 25%;
+      top: 25%;
+      width: 50%; 
+      height: 60%; 
+      
       background-color: #627a82; 
+      overflow-y:scroll;
       /*/background-color: rgba(0,0,0,0.4);*/
 } 
 .input-product{
@@ -452,6 +453,20 @@ body{
     margin-top: 50px;
     margin-left:80px;
 }
+.close {
+    color: rgb(168, 164, 164);
+    float:right;
+    font-size: 60px;
+    font-weight: bold;
+    
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
     
 
 /* Media Queries */

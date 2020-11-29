@@ -128,7 +128,7 @@ var modal = document.getElementById("myModal");
 for(let i = 0 ; i<edit_product.length;i++)
 {
   edit_product[i].addEventListener('click', function() {
-    modal.style.display = "flex";
+    modal.style.display = "block";
     let btn_edit = document.getElementById('edit1');
     const addProduct = document.querySelector("#edit-product ");
     addProduct.addEventListener('submit',function(event){
@@ -155,6 +155,10 @@ for(let i = 0 ; i<edit_product.length;i++)
     
     });
   });
+}
+let close_btn = document.getElementsByClassName("close")[0];
+close_btn.onclick = function() {
+  modal.style.display = "none";
 }
 
 //populateSellerProduct(sellerProducts[i]); 
