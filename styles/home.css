@@ -215,6 +215,7 @@ body{
 .search-box{
     display: flex;
     justify-content: center;
+   
 } 
 .search-box .search{
     position: relative;
@@ -253,6 +254,10 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 0.3rem 0;
+}
+.gitshopedit{
+    text-decoration: none;
+    color: black;
 }
 
 .utilities-box__content .categories{
@@ -342,6 +347,21 @@ body{
     justify-content: space-between;
     padding: 1rem;
 } 
+.backto{
+    width: 190px;
+    height: 50px;
+    margin-right:77%;
+    margin-top: 85%;
+    border: 3px solid #df4d10f2;
+    border-radius: 15px;
+    position: fixed;
+    
+}
+.backlink{
+text-decoration: none;
+color: black;
+font-weight: 800;
+}
 
 .add-to-cart{
     background-color: #fff;
@@ -417,7 +437,6 @@ body{
     }
 }
 
-
 /* Media Queries */
 @media (max-width:1000px){
     .util-box-products{ 
@@ -442,22 +461,23 @@ body{
         height: 50vh;
         justify-content: space-evenly;
     } 
-    .utilities-box__content .search-sort{
-        display: none;
+    #products .search-sort{
+        position: sticky; 
+        top: 5.5rem; 
+        z-index: 1; 
+        backdrop-filter: blur(2px); 
+
+        display:flex; 
+        justify-content: center;
+        align-items: center; 
     } 
     
     #products{
         width: 93%;
         position: absolute; 
         right: 0; 
-        top:0;
+        top:4.8rem;
     }
-    #products .search-sort{
-        display:flex; 
-        justify-content: center;
-        align-items: center; 
-        margin-top:1rem; 
-    } 
     .products-grid{
         width: 100%;
     } 

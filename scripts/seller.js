@@ -115,8 +115,7 @@ for(let i = 0 ; i<del_product.length;i++)
     sellerProducts.splice(i, 1);
     localStorage.setItem('sellerProducts', JSON.stringify(sellerProducts));
     productsGrid.removeChild(card_pro[i]);
-    //window.open ("./seller.html",'_blank')
-    //populateSellerProduct(sellerProducts);
+    
 
     
   });
@@ -161,4 +160,3 @@ close_btn.onclick = function() {
   modal.style.display = "none";
 }
 
-//populateSellerProduct(sellerProducts[i]); 

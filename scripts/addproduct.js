@@ -3,7 +3,7 @@ const addProduct = document.querySelector("#add-product ");
 let categories = document.getElementById("categories")
 let storedProducts =  JSON.parse(localStorage.getItem("sellerProducts"));
 const sellerProducts = storedProducts?storedProducts:[];
-//let productsCurrentlyShown = products; 
+
 
 addProduct.addEventListener("submit",function(event){
     event.preventDefault();

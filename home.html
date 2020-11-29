@@ -75,7 +75,7 @@
                 <div class="hamburger-menu__lines"></div>
             </div>
 
-            <h1 class="brand-name"> GITShop</h1>
+            <h1 class="brand-name"><a class="gitshopedit" href="./index.html"> GITShop</a></h1>
 
             <div class="cart" onclick="location.href='cart-page.html';">
                 <div class="badge">
@@ -88,15 +88,18 @@
             <div class="search-icon">
                 <img src="images/search.svg" alt="search icon">
             </div>
+
         </div> 
         <form class="search-box hide-search-box">
             <div class=search>
                 <input type="image" id="submit-image" src="images/search.svg" alt="search image"> 
                 <input type="text" id="input-field" value="" placeholder="Search by product name">
             </div>
+            
         </form> 
+
     </header> 
-    
+
     <!-- Homepage Content Section --> 
     <div class="util-box-products">
         <!-- Utilities Box Section -->
@@ -115,7 +118,11 @@
                             <input type="image" src="images/search.svg" alt="search image"> 
                             <input type="text" value="" placeholder="Search by product name">
                         </div>
+                        
+
                     </form>
+                    <button  class="backto" > <a class="backlink" href="./seller.html">back to the seller page </a></button>
+
                     <div class="sort-list">
                         <label for="utility-sort">Select Price Range</label> 
                         <select class="sort-drop-menu" name="price" id="utility-sort">
@@ -139,7 +146,7 @@
                         <input type="text" value="" placeholder="Search by product name">
                     </div>
                 </form> 
-
+                
                 <div class="sort-list">
                     <label for="products-section-sort">Select Price Range</label> 
                     <select class="sort-drop-menu" name="price" id="products-section-sort">
@@ -153,6 +160,7 @@
                 </div>
             </div>
             <div class="products-grid"></div>
+     
         </section>
 
     </div>

@@ -338,7 +338,6 @@ let productsCurrentlyShown = products;
 document.querySelector(".brand-name").addEventListener("click", () => {
   location.reload();
 });
-console.log(cartProducts);
 // Hamburger Menu Animation
 
 const burgerMenu = document.querySelector(".hamburger-menu");
@@ -392,14 +391,14 @@ window.onresize = () => {
 // Add event listener to the utilites box (big and medium screens)
 document
   .querySelector(".utilities-box__content .categories")
-  .addEventListener("click", (event) => {
+  .addEventListener("click", event => {
     const categoryTitle = event.target.title;
     if (categoryTitle) {
       productsCurrentlyShown = filterByCategory(categoryTitle);
       populateProduct(productsCurrentlyShown);
       document.querySelector("html").scrollTop = 0;
     }
-    sortMenus.forEach((sortMenu) => {
+    sortMenus.forEach(sortMenu => {
       sortMenu.selectedIndex = 0;
     });
   });
@@ -408,7 +407,7 @@ document
 // small screens
 document
   .querySelector(".menu-content .categories")
-  .addEventListener("click", (event) => {
+  .addEventListener("click", event => {
     let categoryTitle = event.target.id;
     if (!categoryTitle) {
       categoryTitle = event.target.parentElement.id;
@@ -429,8 +428,8 @@ document
 const sortMenus = Array.from(document.querySelectorAll(".sort-drop-menu"));
 // Add event listener to the filter by price
 // drop down menus in both big and medium screens
-sortMenus.forEach((sortMenu) => {
-  sortMenu.addEventListener("change", (event) => {
+sortMenus.forEach(sortMenu => {
+  sortMenu.addEventListener("change", event => {
     onPriceChange(event);
   });
 });
@@ -438,7 +437,7 @@ sortMenus.forEach((sortMenu) => {
 // Get handle of filter by price menu in small screens (menu content)
 // Add event listener to it (change)
 const menuFilter = document.querySelector("#menu-sort");
-menuFilter.addEventListener("change", (event) => {
+menuFilter.addEventListener("change", event => {
   onPriceChange(event);
   menuContent.classList.remove("show");
   burgerMenu.classList.remove("open");
@@ -496,7 +495,7 @@ function checkInRange(products, range) {
     maxBound = Number.MAX_SAFE_INTEGER;
   }
   return products.filter(
-    (product) => product.price >= minBound && product.price <= maxBound
+    product => product.price >= minBound && product.price <= maxBound
   );
 }
 
@@ -504,12 +503,13 @@ function checkInRange(products, range) {
 // Get handle of all search boxes
 // Add event listener to each of them
 const searchBoxes = Array.from(document.querySelectorAll(".search-box"));
-searchBoxes.forEach((searchBox) => {
+let searchResult;
+searchBoxes.forEach(searchBox => {
   const inputField = searchBox.children[0].children[1];
 
-  searchBox.addEventListener("submit", (event) => {
+  searchBox.addEventListener("submit", event => {
     event.preventDefault();
-    if (searchResult.length !== 0) {
+    if (searchResult && searchResult.length !== 0) {
       populateProduct(searchResult);
     } else {
       document.querySelector("#products .products-grid").textContent =
@@ -518,8 +518,7 @@ searchBoxes.forEach((searchBox) => {
     event.target.children[0].children[1].value = "";
   });
 
-  let searchResult;
-  inputField.addEventListener("keyup", (event) => {
+  inputField.addEventListener("keyup", event => {
     // keyCode 13 is the Enter key
     if (event.keyCode !== 13) {
       const searchValue = event.target.value;
@@ -540,7 +539,7 @@ searchBoxes.forEach((searchBox) => {
 
 function searchProductsByName(products, name) {
   const regExp = new RegExp(name.toLowerCase().trim(), "g");
-  return products.filter((product) => {
+  return products.filter(product => {
     if (product.name.toLowerCase().match(regExp)) {
       return true;
     }
@@ -550,16 +549,16 @@ function searchProductsByName(products, name) {
 
 // Add event listenr to the products grid
 // It spots the (add to cart) button
-document.querySelector(".products-grid").addEventListener("click", (event) => {
+document.querySelector(".products-grid").addEventListener("click", event => {
   const cardId = event.target.id
     ? event.target.id
     : event.target.parentElement.id;
   if (cardId && cardId !== "products") {
     cartProducts.push(
-      productsCurrentlyShown.find((product) => product.id === cardId)
+      productsCurrentlyShown.find(product => product.id === cardId)
     );
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-    const badges = document.querySelectorAll(".cart span");
+    // const badges = document.querySelectorAll(".cart span");
     showCartBadge();
   }
 });
@@ -568,7 +567,7 @@ document.querySelector(".products-grid").addEventListener("click", (event) => {
 // on top of the cart icon if items where added.
 function showCartBadge() {
   const badges = document.querySelectorAll(".cart span");
-  Array.from(badges).forEach((badge) => {
+  Array.from(badges).forEach(badge => {
     badge.style.display = "flex";
     if (cartProducts.length <= 99) {
       badge.textContent = cartProducts.length;
@@ -584,7 +583,7 @@ function showCartBadge() {
 function populateProduct(products) {
   productsGrid = document.querySelector("#products .products-grid");
   productsGrid.innerHTML = "";
-  products.forEach((product) => {
+  products.forEach(product => {
     productsGrid.appendChild(createProductCard(product));
   });
 }
@@ -641,7 +640,7 @@ function generateRandomNumber() {
 // and return an array of products that matches that name
 function filterByCategory(categoryName) {
   return products.filter(
-    (product) => product.category.toLowerCase() === categoryName.toLowerCase()
+    product => product.category.toLowerCase() === categoryName.toLowerCase()
   );
 }
 
@@ -649,7 +648,7 @@ function filterByCategory(categoryName) {
 const prices = Array.from(document.querySelectorAll(".name-price span"));
 const timeNeeded = 200;
 
-prices.forEach((price) => {
+prices.forEach(price => {
   const targetPrice = parseInt(price.textContent);
   const increment = targetPrice / timeNeeded;
   let counter = 0;

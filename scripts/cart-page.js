@@ -41,7 +41,7 @@ var tab_pro= document.getElementsByClassName("tab-pro");
              btnHome.appendChild(btnHome1);
              messageEmpty.appendChild(btnHome);
             let sec=document.getElementsByClassName("section-1");
-            //sec[0].Child(messageEmpty);
+            
             sec[0].insertBefore(messageEmpty, sec[0].childNodes[6]);
       }
       
@@ -70,7 +70,7 @@ list_pro.addEventListener('click',function(){
      sec[0].insertBefore(tab_pro[0], sec[0].childNodes[4]);
      if(cartProducts.length !=0  )
 {     tr_tab[0].innerHTML="";
-      //list_pro[0].innerHTML="";//
+      
       for( let i =0 ; i < cartProducts.length;i++)
       {
             
@@ -175,9 +175,7 @@ else
 }
       
 });
- //sec[0].insertBefore(tab_pro[0], sec[0].childNodes[4]);
-
-
+ 
 
 
 
@@ -246,11 +244,11 @@ list_pro.addEventListener('click',function(){
       
       
                    });
-                  //namePrice.appendChild(image);
+                  
                   s_del.setAttribute('style','cursor:pointer;')
                   s_del.addEventListener('click',function(){
                         console.log(i);
-                        //delete cartProducts[i];
+                        
                          let pre=parseInt(p.textContent);
                          p.textContent= pre- parseInt(total.textContent)+'$';
                          p1.textContent=p.textContent
@@ -358,7 +356,7 @@ function showlist(i)
             s_del.setAttribute('style','cursor:pointer;')
             s_del.addEventListener('click',function(){
                   console.log(i);
-                  //delete cartProducts[i];
+                  
                   let pre=parseInt(p.textContent);
                   p.textContent= pre- parseInt(total.textContent)+'$';
                   p1.textContent=p.textContent
@@ -394,7 +392,7 @@ function showlist(i)
             let pre=parseInt(p.textContent);
             p.textContent= pre+ parseInt(total.textContent)+'$';
             p1.textContent=p.textContent;
-       // sec[0].insertBefore(tab_pro[0], sec[0].childNodes[5]);
+      
 
 }
 
