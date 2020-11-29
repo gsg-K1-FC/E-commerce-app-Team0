@@ -1,5 +1,6 @@
 // Products Array
-const products = [
+document.getElementById
+let products = [
   {
     id: generateRandomNumber(),
     name: "Laptop",
@@ -321,13 +322,18 @@ const products = [
     details: "Some details",
   },
 ];
-const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+//const products = JSON.parse(localStorage.getItem("products")) || [];
+let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+
+//const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 if (cartProducts.length !== 0) {
   showCartBadge();
 }
-// Array to store the products currently shown on the screen
-let productsCurrentlyShown = products;
 
+products=products.concat(sellerProducts);
+let productsCurrentlyShown = products;
+// Array to store the products currently shown on the screen
 // Refresh the page when the brand name is clicked
 document.querySelector(".brand-name").addEventListener("click", () => {
   location.reload();
@@ -571,7 +577,7 @@ function showCartBadge() {
     }
   });
 }
-
+//products=products.concat(sellerProducts);
 // This function addes product card to the products grid
 // It takes a products array as argument
 function populateProduct(products) {
@@ -582,6 +588,7 @@ function populateProduct(products) {
   });
 }
 populateProduct(products);
+
 
 // This function creates product card using its details
 // It takes a product object as input and

@@ -1,5 +1,3 @@
-
-
 let sec=document.getElementsByClassName("section-1");
 
 var tab_pro= document.getElementsByClassName("tab-pro");
@@ -7,6 +5,7 @@ var tab_pro= document.getElementsByClassName("tab-pro");
      console.log(tab_pro[0]);
      var list_pro= document.getElementsByClassName("grid-pro");
      list_pro[0].setAttribute('style','visibility:hidden;');
+     console.log(cartProducts);
      if(cartProducts.length !=0)
       {     console.log("hello");
             for( let i =0 ; i < cartProducts.length;i++)
@@ -42,7 +41,7 @@ var tab_pro= document.getElementsByClassName("tab-pro");
              btnHome.appendChild(btnHome1);
              messageEmpty.appendChild(btnHome);
             let sec=document.getElementsByClassName("section-1");
-            //sec[0].Child(messageEmpty);
+            
             sec[0].insertBefore(messageEmpty, sec[0].childNodes[6]);
       }
       
@@ -59,7 +58,8 @@ var tab_pro= document.getElementsByClassName("tab-pro");
 
 var list_pro=document.getElementById("list");
 list_pro.addEventListener('click',function(){
-      
+      location.reload();
+       cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
       var tab_pro= document.getElementsByClassName("tab-pro");
       tab_pro[0].setAttribute('style','visibility:visible');
      console.log(tab_pro[0]);
@@ -70,7 +70,7 @@ list_pro.addEventListener('click',function(){
      sec[0].insertBefore(tab_pro[0], sec[0].childNodes[4]);
      if(cartProducts.length !=0  )
 {     tr_tab[0].innerHTML="";
-      //list_pro[0].innerHTML="";
+      
       for( let i =0 ; i < cartProducts.length;i++)
       {
             
@@ -143,6 +143,7 @@ list_pro.addEventListener('click',function(){
                   tr_tab.removeChild(td4_tab);
                   tr_tab.removeChild(del);
                   tab_pro[0].removeChild(tr_tab);
+                  
 
                   
             });
@@ -174,9 +175,7 @@ else
 }
       
 });
-sec[0].insertBefore(tab_pro[0], sec[0].childNodes[4]);
-
-
+ 
 
 
 
@@ -245,11 +244,11 @@ list_pro.addEventListener('click',function(){
       
       
                    });
-                  //namePrice.appendChild(image);
+                  
                   s_del.setAttribute('style','cursor:pointer;')
                   s_del.addEventListener('click',function(){
                         console.log(i);
-                        //delete cartProducts[i];
+                        
                          let pre=parseInt(p.textContent);
                          p.textContent= pre- parseInt(total.textContent)+'$';
                          p1.textContent=p.textContent
@@ -269,6 +268,7 @@ list_pro.addEventListener('click',function(){
 
                         card.removeChild(totalPrice);
                         list_pro[0].removeChild(card);
+                        
 
                         
             });
@@ -356,7 +356,7 @@ function showlist(i)
             s_del.setAttribute('style','cursor:pointer;')
             s_del.addEventListener('click',function(){
                   console.log(i);
-                  //delete cartProducts[i];
+                  
                   let pre=parseInt(p.textContent);
                   p.textContent= pre- parseInt(total.textContent)+'$';
                   p1.textContent=p.textContent
@@ -374,6 +374,7 @@ function showlist(i)
                   tr_tab.removeChild(td4_tab);
                   tr_tab.removeChild(del);
                   tab_pro[0].removeChild(tr_tab);
+                  
 
                   
             });
@@ -391,8 +392,7 @@ function showlist(i)
             let pre=parseInt(p.textContent);
             p.textContent= pre+ parseInt(total.textContent)+'$';
             p1.textContent=p.textContent;
-       // sec[0].insertBefore(tab_pro[0], sec[0].childNodes[5]);
+      
 
 }
-
 
