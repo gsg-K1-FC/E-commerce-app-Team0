@@ -32,7 +32,7 @@ addProduct.addEventListener("submit",function(event){
             
 
             localStorage.setItem("sellerProducts",JSON.stringify(sellerProducts));
-            window.open ("./seller.html")        
+            window.open ("./seller.html",'_self')        
           
    }
 });

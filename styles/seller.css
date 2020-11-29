@@ -438,24 +438,25 @@ body{
       justify-content: space-between;
       justify-items:end;
       z-index: 1; 
-      padding-top:50px; 
+      padding-top:0px; 
       left: 25%;
       top: 25%;
-      width: 50%; 
+      width: 35%; 
       height: 60%; 
-      
+      flex-direction: column;
       background-color: #627a82; 
       overflow-y:scroll;
       /*/background-color: rgba(0,0,0,0.4);*/
 } 
 .input-product{
     
-    margin-top: 50px;
+    
     margin-left:80px;
 }
 .close {
     color: rgb(168, 164, 164);
-    float:right;
+    display:flex;
+    justify-content:flex-end;
     font-size: 60px;
     font-weight: bold;
     
@@ -522,6 +523,14 @@ body{
     .add-to-cart{
         font-size: clamp(10px,2.5vw,60px);
     }
+    .modal
+     {
+        width: 100%;
+        height: 90%; 
+        left: 0%;
+        top: 12%;
+        flex-direction:column;
+     }
 }
 
 
@@ -569,6 +578,10 @@ body{
     }
     .card{
         width: clamp(70vw,80vw,90vw);
+        height: 28rem;
+       
+             
+        
     } 
     .name-price{
         font-size: clamp(10px,5vw,60px);
@@ -576,5 +589,27 @@ body{
     .add-to-cart{
         font-size: clamp(10px,5vw,60px);
     }
-
+     .modal
+     {
+        width: 100%;
+        height: 90%; 
+        left: 0%;
+        top: 15%;
+        flex-direction:column;
+     }
+     .close
+     {
+         height: 10px;
+     }
+     #edit-product
+     {
+         display: flex;
+         flex-direction: column;
+         left: 0%;
+     }
+     .input-product ,.images-product-default
+     {
+         margin-left: 15%;
+          margin-top: 0%;
+     }
 }

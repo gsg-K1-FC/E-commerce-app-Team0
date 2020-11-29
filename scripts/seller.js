@@ -115,7 +115,7 @@ for(let i = 0 ; i<del_product.length;i++)
     sellerProducts.splice(i, 1);
     localStorage.setItem('sellerProducts', JSON.stringify(sellerProducts));
     productsGrid.removeChild(card_pro[i]);
-    location.reload();
+    //window.open ("./seller.html",'_blank')
     //populateSellerProduct(sellerProducts);
 
     
@@ -128,7 +128,7 @@ var modal = document.getElementById("myModal");
 for(let i = 0 ; i<edit_product.length;i++)
 {
   edit_product[i].addEventListener('click', function() {
-    modal.style.display = "block";
+    modal.style.display = "flex";
     let btn_edit = document.getElementById('edit1');
     const addProduct = document.querySelector("#edit-product ");
     addProduct.addEventListener('submit',function(event){
