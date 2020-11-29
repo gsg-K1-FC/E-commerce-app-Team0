@@ -49,20 +49,22 @@ const sellerProducts = JSON.parse(localStorage.getItem("sellerProducts"))
 //   }
 // ];
 
-
+productsGrid = document.querySelector("#products .product-grid");
 function populateSellerProduct(products) {
-  productsGrid = document.querySelector("#products .products-grid");
+  
   productsGrid.innerHTML = "";
   if (products.length === 0) {
     productsGrid.innerHTML =
-      "<h3>You don't have any products <a href='#'>click here</a> to add one </h3>";
+      "<h3 >You don't have any products <a href='addproduct.html'>click here</a> to add one </h3>";
   } else {
     products.forEach((product) => {
       productsGrid.appendChild(createSellerProductCard(product));
     });
   }
 }
-populateSellerProduct(sellerProducts);  
+populateSellerProduct(sellerProducts);
+ 
+
 
 
 function createSellerProductCard(sellerProducts) {
@@ -72,25 +74,27 @@ function createSellerProductCard(sellerProducts) {
   const namePrice = document.createElement("div");
   namePrice.classList.add("name-price");
   const name = document.createElement("h3");
+  name.className="name__pro";
   name.textContent = sellerProducts.name;
   const price = document.createElement("span");
+  price.className="pric";
   price.textContent = sellerProducts.price + "$";
   namePrice.appendChild(name);
   namePrice.appendChild(price);
 
   const image = document.createElement("img");
-  image.setAttribute("src", sellerProducts.imageUrl);
+  image.setAttribute("src", sellerProducts.imageURL);
   image.setAttribute("alt", "product image");
 
   const deleteEdit = document.createElement("div"); 
   deleteEdit.classList.add("delete-edit");
   const deleteButton = document.createElement("button"); 
   deleteButton.textContent = "Delete";
-  deleteButton.classList.add("delete-edit__button");
+  deleteButton.classList.add("delete__button");
   deleteButton.setAttribute("id","delete");
   const editButton = document.createElement("button"); 
   editButton.textContent ="Edit";
-  editButton.classList.add("delete-edit__button");
+  editButton.classList.add("edit__button");
   editButton.setAttribute("id","edit");
   deleteEdit.appendChild(deleteButton); 
   deleteEdit.appendChild(editButton);
@@ -99,5 +103,58 @@ function createSellerProductCard(sellerProducts) {
   card.appendChild(image); 
   card.appendChild(deleteEdit);
   
+  
   return card;
 }
+// delete button 
+let del_product = document.getElementsByClassName("delete__button");
+let card_pro = document.getElementsByClassName("card");
+for(let i = 0 ; i<del_product.length;i++)
+{
+  del_product[i].addEventListener('click',function(){
+    sellerProducts.splice(i, 1);
+    localStorage.setItem('sellerProducts', JSON.stringify(sellerProducts));
+    productsGrid.removeChild(card_pro[i]);
+    location.reload();
+    //populateSellerProduct(sellerProducts);
+
+    
+  });
+}
+
+// edit button 
+let edit_product = document.getElementsByClassName("edit__button");
+var modal = document.getElementById("myModal");
+for(let i = 0 ; i<edit_product.length;i++)
+{
+  edit_product[i].addEventListener('click', function() {
+    modal.style.display = "flex";
+    let btn_edit = document.getElementById('edit1');
+    const addProduct = document.querySelector("#edit-product ");
+    addProduct.addEventListener('submit',function(event){
+      event.preventDefault();
+      let formFields = event.target.children;
+       
+      const editProduct = {
+        id:"randomId",
+        name: formFields[1].children[0].value,
+       price: formFields[1].children[1].value,
+       imageURL: formFields[0].children[1].value,
+      
+       detalis:formFields[1].children[2].value,
+       category: categories.value
+       };
+       
+       
+       sellerProducts[i]=editProduct;
+       localStorage.setItem("sellerProducts",JSON.stringify(sellerProducts));
+       modal.style.display = "none";
+       location.reload(); 
+       
+       
+    
+    });
+  });
+}
+
+//populateSellerProduct(sellerProducts[i]); 
